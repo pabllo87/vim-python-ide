@@ -193,6 +193,11 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 " Synstatic
 let g:syntastic_python_checkers=['python','pylint','pyflakes','flake8']
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {'mode': 'passive'}
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 noremap <Leader>sc :SyntasticCheck<CR>
 
 " TagList
@@ -204,3 +209,5 @@ map <C-n> :NERDTreeToggle<CR>
 
 " FuzzyFinder
 map <C-b> :FufBuffer<CR>
+
+autocmd BufWritePre *.py :%s/\s\+$//e
