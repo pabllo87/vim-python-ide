@@ -140,6 +140,15 @@ set noswapfile
 " curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
 " Now you can install any plugin into a .vim/bundle/plugin-name/ folder
 call pathogen#infect()
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 
 
 " ============================================================================
