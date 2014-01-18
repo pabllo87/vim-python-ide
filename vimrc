@@ -230,4 +230,7 @@ map <C-n> :NERDTreeToggle<CR>
 " FuzzyFinder
 map <C-b> :FufBuffer<CR>
 
+" Ctrlp
+map <C-f> :CtrlP<CR>
+
 autocmd BufWritePre *.py :%s/\s\+$//e
