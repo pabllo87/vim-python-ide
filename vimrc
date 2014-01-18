@@ -149,7 +149,18 @@ Bundle 'gmarik/vundle'
 " My bundles here:
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-
+"Bundle 'snipMate'
+Bundle 'taglist.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-misc'
+Bundle 'Lokaltog/powerline'
+Bundle 'hynek/vim-python-pep8-indent'
 
 " ============================================================================
 " Python IDE Setup
