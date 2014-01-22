@@ -161,6 +161,9 @@ Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'Lokaltog/powerline'
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'argtextobj.vim'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'coderifous/textobj-word-column.vim'
 
 " ============================================================================
 " Python IDE Setup
