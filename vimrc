@@ -165,6 +165,7 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'argtextobj.vim'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'surround.vim'
 
 " ============================================================================
 " Python IDE Setup
