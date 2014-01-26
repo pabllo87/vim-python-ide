@@ -166,6 +166,11 @@ Bundle 'argtextobj.vim'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'surround.vim'
+Bundle 'jasoncodes/ctrlp-modified.vim'
+Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'ivalkeen/vim-ctrlp-tjump'
+Bundle 'sgur/ctrlp-extensions.vim'
+Bundle 'sjl/gundo.vim'
 
 " ============================================================================
 " Python IDE Setup
@@ -187,6 +192,7 @@ set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 set wildignore+=*dist/*
 set wildignore+=*.egg-info/*
+let g:ctrlp_extensions = ['funky']
 
 
 " Settings for jedi-vim
@@ -237,5 +243,12 @@ map <C-b> :FufBuffer<CR>
 
 " Ctrlp
 map <C-f> :CtrlP<CR>
+map <Leader>m :CtrlPModified<CR>
+map <Leader>M :CtrlPBranch<CR>
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
