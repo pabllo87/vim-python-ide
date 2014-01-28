@@ -252,3 +252,5 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
+nnoremap j gj
+nnoremap k gk
