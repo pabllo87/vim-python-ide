@@ -172,6 +172,7 @@ Bundle 'ivalkeen/vim-ctrlp-tjump'
 Bundle 'sgur/ctrlp-extensions.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'andviro/flake8-vim'
+Bundle 'tpope/vim-fugitive'
 
 " ============================================================================
 " Python IDE Setup
