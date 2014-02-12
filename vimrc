@@ -171,6 +171,7 @@ Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'ivalkeen/vim-ctrlp-tjump'
 Bundle 'sgur/ctrlp-extensions.vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'andviro/flake8-vim'
 
 " ============================================================================
 " Python IDE Setup
@@ -225,6 +226,7 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " Synstatic
 let g:syntastic_python_checkers=['python','pylint','pyflakes','flake8']
 let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map = {'mode': 'passive'}
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol = '✗'
