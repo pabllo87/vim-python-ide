@@ -173,6 +173,8 @@ Bundle 'sgur/ctrlp-extensions.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'andviro/flake8-vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'Lokaltog/vim-easymotion'
 
 " ============================================================================
 " Python IDE Setup
@@ -257,3 +259,9 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 nnoremap <F5> :GundoToggle<CR>
 nnoremap j gj
 nnoremap k gk
+
+" Rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
