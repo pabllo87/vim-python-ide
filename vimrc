@@ -175,6 +175,7 @@ Bundle 'andviro/flake8-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
 
 " ============================================================================
 " Python IDE Setup
