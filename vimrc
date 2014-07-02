@@ -15,6 +15,8 @@ autocmd! bufwritepost .vimrc source %
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
+set encoding=utf-8
+set fileencoding=utf-8
 
 set pastetoggle=<F2>
 set clipboard=unnamed
@@ -158,7 +160,7 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'xolox/vim-easytags'
+"Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'Lokaltog/powerline'
 Bundle 'hynek/vim-python-pep8-indent'
@@ -175,7 +177,7 @@ Bundle 'andviro/flake8-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
+"Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
 
 " ============================================================================
 " Python IDE Setup
@@ -186,6 +188,11 @@ Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
 " cd ~/.vim/bundle
 " git clone git://github.com/Lokaltog/vim-powerline.git
 set laststatus=2
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 
 " Settings for ctrlp
@@ -204,6 +211,7 @@ let g:ctrlp_extensions = ['funky']
 " cd ~/.vim/bundle
 " git clone git://github.com/davidhalter/jedi-vim.git
 let g:jedi#usages_command = "<leader>z"
+let g:jedi#show_call_signatures = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
@@ -228,14 +236,16 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 :filetype plugin on
 
 " Synstatic
-let g:syntastic_python_checkers=['python','pylint','pyflakes','flake8']
+let g:syntastic_python_checkers=['python','pylint','flake8','pyflakes']
 let g:syntastic_check_on_wq = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_mode_map = {'mode': 'passive'}
+let g:syntastic_check_on_open = 0
+let g:syntastic_mode_map = {'mode': 'passive', 'passive_filetypes': ['python']}
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list = 0
 noremap <Leader>sc :SyntasticCheck<CR>
+map <Leader>sct :SyntasticToggle<CR>
 
 " TagList
 map <c-t> :TlistToggle<CR>
@@ -260,9 +270,3 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 nnoremap <F5> :GundoToggle<CR>
 nnoremap j gj
 nnoremap k gk
-
-" Rainbow parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
