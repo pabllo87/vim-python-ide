@@ -160,7 +160,7 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-"Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'Lokaltog/powerline'
 Bundle 'hynek/vim-python-pep8-indent'
@@ -177,11 +177,14 @@ Bundle 'andviro/flake8-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
+" Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
+Bundle 'ntpeters/vim-better-whitespace'
 
 " ============================================================================
 " Python IDE Setup
 " ============================================================================
+
+let g:easytags_auto_highlight = 0
 
 
 " Settings for vim-powerline
@@ -270,3 +273,6 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 nnoremap <F5> :GundoToggle<CR>
 nnoremap j gj
 nnoremap k gk
+
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,nbsp:%
+set list
