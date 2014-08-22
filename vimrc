@@ -152,7 +152,7 @@ Bundle 'gmarik/vundle'
 " My bundles here:
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-"Bundle 'snipMate'
+" Bundle 'snipMate'
 Bundle 'taglist.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'

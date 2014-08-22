@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="devu"
+ZSH_THEME="clean"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -37,42 +37,20 @@ ZSH_THEME="devu"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
-# in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
-# yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autopep8 battery colorize common-aliases copydir copyfile cp django github history jump mercurial pep8 pip pylint python sudo virtualenv web-search virtualenvwrapper)
+plugins=(git autojump pip virtualenv mercurial python django history virtualenvwrapper virtualenv-prompt)
 
 source $ZSH/oh-my-zsh.sh
+autoload -U promptinit promptinit
 
-# User configuration
+# Customize to your needs...
+export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.pyenv/bin
 
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/player/.local/bin
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 export EDITOR='vim'
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-#if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-#    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-#fi
 export PYTHONDONTWRITEBYTECODE=1
-# NPM packages in homedir
+
 NPM_PACKAGES="$HOME/.npm-packages"
 #
 # # Tell our environment about user-installed node tools
@@ -88,3 +66,25 @@ NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export GEM_HOME=$HOME/gems
 export GEM_PATH=$HOME/gems:/usr/local/lib/ruby/gems/1.8/
 export PATH=$PATH:$HOME/gems/bin:$HOME/sbt/bin
+
+export PATH="/home/$USER/.pyenv/shims:${PATH}"
+export PYENV_SHELL=zsh
+source "/home/$USER/.pyenv/libexec/../completions/pyenv.zsh"
+pyenv rehash 2>/dev/null
+pyenv() {
+  local command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  activate|deactivate|rehash|shell)
+    eval "`pyenv "sh-$command" "$@"`";;
+  *)
+    command pyenv "$command" "$@";;
+  esac
+}
+
+eval "$(pyenv virtualenv-init -)"
+source .env
